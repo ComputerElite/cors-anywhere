@@ -133,7 +133,7 @@ function proxyRequest(req, res, proxy) {
   // Start proxying the request
   try {
     req.headers["origin"] = "https://www.oculus.com"
-    if(req.headers["SetDNT"]) {
+    if(req.headers["SetDNT"] == "1") {
       req.headers["DNT"] = req.headers["SetDNT"]
     } else {
       req.headers["DNT"] = "1"
